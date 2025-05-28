@@ -1,0 +1,94 @@
+{
+  "height": 57,
+  "position": "top",
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  //"modules-center": ["hyprland/window"],
+  "modules-right": ["pulseaudio", "network",  "temperature", "cpu", "memory", "backlight", "battery", "clock"],
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "rewrite": {
+      "(.*)kitty": "<span size='16000' rise='-2000'> 󰄛 </span>Kitty Terminal ",
+      "(.*)Zen Browser": "<span size='16000' rise='-2000'>  </span>Zen Browser ",
+      "(.*)Visual Studio Code": "<span size='16000' rise='-2000'>  </span>Visual Studio Code ",
+      "": "<span size='16000' rise='-2000'>  </span>will@archlinux "
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format": "<span size='16000' rise='-2000'>  </span>{:%a %d %b %H:%M:%S} ",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    //"locale": "en_GB.UTF-8",
+    "timezone": "Europe/London",
+    "calendar": {
+        "weeks-pos"     : "right",
+        //"on-scroll"     : 1,
+        "format": {
+            "months":     "<span color='#ffead3'><b>{}</b></span>",
+            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+     }
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span size='16000' rise='-2000'> {icon} </span>{capacity}% ",
+    "format-warning": "<span size='16000' rise='-2000'> {icon} </span>{capacity}% ",
+    "format-critical": "<span size='16000' rise='-2000'> {icon} </span>{capacity}% ",
+    //"format-charging": "<span size='16000' foreground='#1e1e2e' background='#f9e2af'>  </span>{capacity}% ",
+    "format-charging": "<span size='16000' rise='-2000'>  </span>{capacity}% ",
+    "format-plugged": "<span size='16000' rise='-2000'>  </span>{capacity}% ",
+    "format-alt": "<span size='16000' rise='-2000'> {icon} </span> {time}",
+    "format-full": "<span size='16000' rise='-2000'> 󱈑 </span>{capacity}% ",
+    "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰂂"],
+    "tooltip-format": "󰂃 {time} \n󱐋 {power}W"
+  },
+  "network": {
+    "format-wifi": "<span size='16000' rise='-2000'> 󰖩 </span>{essid} ",
+    "format-ethernet": "<span size='16000' rise='-2000'> 󰖪 </span>Disconnected ",
+    "format-linked": "{ifname} (No IP)  ",
+    "format-disconnected": "<span size='16000' rise='-2000'> 󰤫 </span>Disconnected ",
+    "tooltip-format-wifi": "󰩠 {ipaddr} \n󱚾 {frequency}Ghz \n󱚺 {signalStrength}% \n󱚺 {signaldBm}dBm"
+  },
+  "pulseaudio": {
+      "format": "<span size='16000' rise='-2000'> {icon} </span>{volume}% ",
+      "format-muted": "<span size='16000' rise='-2000'> 󰝟 </span>0% ",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "<span size='16000' rise='-2000'>  </span>{usage}% ",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 10,
+    "format": "<span size='16000' rise='-2000'>  </span>{percentage}% ",
+    "max-length": 10
+  },
+  "temperature": {
+    "thermal-zone": 18,
+    "interval": 10,
+    "tooltip": false,
+    //"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 60,
+    "format-critical": "<span foreground='#f38ba8'> 󰸁 </span>{temperatureC}°C ",
+    "format": "<span size='16000' rise='-2000'> 󰔏 </span>{temperatureC}°C "
+  },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "<span size='16000' rise='-2000'> {icon} </span>{percent}% ",
+      "format-icons": ["󰃝", "󰃠"],
+      "on-click": "brightnessctl set +5% --quiet",
+      "on-click-right": "brightnessctl set 5%- --quiet",
+      "tooltip": true,
+      "tooltip-format": "Left Click: +5% brightness \nRight Click: -5% brightness"
+  }
+}

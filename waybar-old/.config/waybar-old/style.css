@@ -1,0 +1,222 @@
+@import "mocha.css"; 
+
+* {
+    font-family: "CaskaydiaCove Nerd Font Mono";
+    font-size: 16px;
+    min-height: 0;
+    font-weight: normal;
+}
+
+window#waybar {
+    background: transparent;
+    /*background-color: @crust;*/
+    color: @overlay0;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 1px solid @overlay1;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#window {
+    /*margin: 8px;*/
+    margin-left: 8px;
+    padding: 5px;
+    /*padding-left: 8px;*/
+    /*padding-right: 8px;*/
+    border: 1px solid @pink;
+    border-radius: 5px;
+    color: @pink;
+    background-color: @base;
+}
+
+tooltip {
+   background-color: @surface0;
+   border-radius: 5px;
+   margin-top: 20px;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    color: @pink;
+    border-bottom: 2px solid @pink;
+}
+
+.modules-left {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modules-right {
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#workspaces {
+    border: 1px solid @pink;
+    border-radius: 5px;
+    padding: 5px;
+    color: @pink;
+    background-color: @base;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 2px;
+    color: @pink;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    color: @pink;
+    border-bottom: 2px solid @pink;
+}
+
+#workspaces button.active {
+   /*background-color: rgba(0, 0, 0, 0.3);*/
+    color: @pink;
+    border-bottom: 2px solid @pink;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/*#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#temperature,
+#backlight,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}*/
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#temperature,
+#backlight,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+    padding-top: 5px;
+    padding-bottom:5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 8px; 
+    border-radius: 5px;
+    background-color: @base;
+}
+
+#clock {
+    color: @flamingo;
+    border: 1px solid @flamingo;
+}
+
+
+#pulseaudio {
+    color: @peach;
+    border: 1px solid @peach;
+}
+
+#network {
+    color: @mauve;
+    border: 1px solid @mauve;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+#battery {
+    color: @yellow;
+    border: 1px solid @yellow;
+}
+
+#battery span {
+    padding-left: 2px;
+    padding-right: 2px;
+    background: @yellow;
+}
+
+#cpu {
+    color: @teal;
+    border: 1px solid @teal;
+}
+
+#memory {
+    color: @sapphire;
+    border: 1px solid @sapphire;
+}
+
+#cpu span {
+   padding-left: 2px;
+   padding-right: 2px;
+   background: @teal;
+}
+
+#temperature {
+    color: @rosewater;
+    border: 1px solid @rosewater;
+}
+#temperature.critical {
+    color: @red;
+    border: 1px solid @red;
+}
+#backlight {
+    color: @text;
+    border: 1px solid @text;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#custom-vpn {
+    color: @lavender;
+    border-radius: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}

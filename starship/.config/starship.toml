@@ -2,14 +2,13 @@
 
 format = """
 [](surface0)\
-$os\
 $username\
 [](bg:peach fg:surface0)\
 $directory\
 [](fg:peach bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:green bg:blue)\
 $c\
 $rust\
 $golang\
@@ -18,27 +17,12 @@ $php\
 $java\
 $kotlin\
 $haskell\
-$python\
-[](fg:teal bg:blue)\
-$docker_context\
-[](fg:blue bg:purple)\
+[](fg:blue bg:pink)\
 $time\
-[ ](fg:purple)\
+[ ](fg:pink)\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
-
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

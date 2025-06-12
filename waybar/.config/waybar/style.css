@@ -33,19 +33,19 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 3px 5px;  /* Adjusted padding to reduce height */
-    margin: 3px 5px;    /* Reduced margin slightly */
+    padding: 3px 6px;  /* Adjusted padding to reduce height */
+    margin: 0px 6px;    /* Reduced margin slightly */
     border-radius: 6px;
     color: @foreground;
     background-color: @base;
     transition: all 0.3s ease-in-out;
-    font-size: 14px;  /* Slightly smaller font size */
+    font-size: 15px;  /* Slightly smaller font size */
 }
 
 #workspaces button.active {
     /*color: @foreground;*/
     color: @base;
-    background: @flamingo;
+    background: @mauve;
 }
 
 #workspaces button:hover {
@@ -60,18 +60,19 @@ window#waybar.hidden {
     background-color: @mantle;
     border-radius: 14px;
     padding: 3px 6px;  /* Adjusted padding to reduce height */
+    margin: 1px;
 }
 
 #window {
     /*background-color: #111827;*/
-    background-color: @flamingo;
-    font-size: 15px;   /* Slightly smaller font size */
+    background-color: @mauve;
+    font-size: 14px;   /* Slightly smaller font size */
     font-weight: 800;
     /*color: @foreground;*/
     color: @base;
-    border-radius: 14px;
+    border-radius: 6px;
     padding: 3px 6px;  /* Reduced padding */
-    margin: 2px;
+    margin: 4px;
     opacity: 1;
 }
 

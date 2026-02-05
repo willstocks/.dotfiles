@@ -1,0 +1,5 @@
+[General]
+theme=catppuccin-mocha-flamingo
+
+[Applications]
+catppuccin-mocha-flamingo=dolphin

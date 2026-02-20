@@ -130,10 +130,10 @@
     },
     "network": {
         "format-wifi": "  {essid}",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format": "",
-        "format-disconnected": "",
+        "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
         "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
@@ -179,7 +179,7 @@
         "exec-if": "ping wttr.in -c1"
     },
     "custom/pacman": {
-        "format": "<big>􏆲</big>  {}",
+        "format": "<big>󰮯</big>  {}",
         "interval": 3600,                     // every hour
         "exec": "checkupdates | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
@@ -272,7 +272,7 @@
         "format-disconnected": "",
         "on-click": "mpc --quiet toggle",
         "on-click-right": "mpc update; mpc ls | mpc add",
-        "on-click-middle": "alacritty -e ncmpcpp",
+        "on-click-middle": "kitty -e ncmpcpp",
         "on-scroll-up": "mpc --quiet prev",
         "on-scroll-down": "mpc --quiet next",
         "smooth-scrolling-threshold": 5,

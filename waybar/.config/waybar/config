@@ -97,7 +97,7 @@
         // "format-critical": " {temperatureC}°C",
         "format-critical": "  {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""],
+        "format-icons": ["", "", ""],
         "max-length": 7,
         "min-length": 5,
         "on-click": "xsensors"

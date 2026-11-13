@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+# Volume control with wob feedback. Usage: volume up|down|mute
+# Run via `bash volume <action>` from keybinds.lua.
+
+wob="/tmp/${HYPRLAND_INSTANCE_SIGNATURE}.wob"
+
+current_volume() {
+    pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+(?=%)' | head -1
+}
+
+case "$1" in
+    up)
+        pactl set-sink-volume @DEFAULT_SINK@ +5%
+        # cap at 100%
+        vol=$(current_volume)
+        if [ "$vol" -gt 100 ]; then
+            pactl set-sink-volume @DEFAULT_SINK@ 100%
+            vol=100
+        fi
+        echo "$vol" > "$wob"
+        ;;
+    down)
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
+        current_volume > "$wob"
+        ;;
+    mute)
+        amixer sset Master toggle \
+            | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' \
+            | head -1 > "$wob"
+        ;;
+    *)
+        echo "usage: $0 up|down|mute" >&2
+        exit 1
+        ;;
+esac

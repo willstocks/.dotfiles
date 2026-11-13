@@ -1,0 +1,18 @@
+-- Colour palette.
+-- Usage: local c = require("config.colors")
+
+return {
+    cachylgreen = "rgba(82dcccff)",
+    cachymgreen = "rgba(00aa84ff)",
+    cachydgreen = "rgba(007d6fff)",
+    cachylblue  = "rgba(01ccffff)",
+    cachymblue  = "rgba(182545ff)",
+    cachydblue  = "rgba(111826ff)",
+    cachywhite  = "rgba(ffffffff)",
+    cachygrey   = "rgba(ddddddff)",
+    cachygray   = "rgba(798bb2ff)",
+
+    catpactivefrom = "rgba(f5c2e7ee)",
+    catpactiveto   = "rgba(89b4faee)",
+    catpinactive   = "rgba(595959aa)",
+}

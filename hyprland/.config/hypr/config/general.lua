@@ -66,15 +66,15 @@ hl.config({
         focus_fit_method         = 1,
     },
 
+    -- special_scale_factor (0.8) was removed from both layouts: deprecated in 0.57
+    -- with no documented workspace-rule replacement yet.
     dwindle = {
-        special_scale_factor = 0.8,
-        preserve_split       = true,
-        force_split          = 2,
+        preserve_split = true,
+        force_split    = 2,
     },
 
     master = {
-        new_status           = "master",
-        special_scale_factor = 0.8,
+        new_status = "master",
     },
 })
 
